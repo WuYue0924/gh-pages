@@ -1,3 +1,30 @@
+// Sticky menu
+let newScrollPosition = 0;
+let lastScrollPosition;
+const header = document.getElementById("js-top");
+
+window.addEventListener('scroll', () => {
+    lastScrollPosition = window.scrollY;
+
+    // Scrolling down
+    if (newScrollPosition < lastScrollPosition && lastScrollPosition > 184) {
+        header.classList.remove("is-visible");
+        header.classList.add("is-hidden");
+    // Scrolling up
+    } else if (newScrollPosition > lastScrollPosition) {
+        header.classList.remove("is-hidden");
+        header.classList.add("is-visible");
+    }
+
+    if (lastScrollPosition < 184) {
+        header.classList.remove("is-visible");
+    }
+
+    newScrollPosition = lastScrollPosition;
+});
+
+
+
 // Dropdown menu
 (function (menuConfig) {
     /**
@@ -428,6 +455,27 @@
 })(window.publiiThemeMenuConfig);
 
 
+// Load search input area
+const searchButton = document.querySelector(".js-search-btn");
+const searchOverlay = document.querySelector(".js-search-overlay");
+const searchClose = document.querySelector(".js-search-close");
+const searchInput = document.querySelector("[type='search']");
+
+if (searchButton && searchOverlay && searchClose) {
+    searchButton.addEventListener("click", () => {
+        searchOverlay.classList.add("expanded");
+        if (searchInput) {
+            setTimeout(() => {
+                searchInput.focus();
+            }, 60);
+        }
+    });
+
+    searchClose.addEventListener("click", () => {
+        searchOverlay.classList.remove("expanded");
+    });
+}
+
 // Share buttons pop-up
 (function () {
     // share popup
@@ -499,6 +547,24 @@
         }
     }
 })();
+
+// Back to top
+const backToTopButton = document.getElementById("backToTop");
+
+if (backToTopButton) {
+    window.addEventListener('scroll', () => {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            backToTopButton.classList.add("is-visible");
+        } else {
+            backToTopButton.classList.remove("is-visible");
+        }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
 
 // Responsive embeds script
 (function () {
