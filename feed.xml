@@ -3,7 +3,7 @@
     <title>CppKing-Blog</title>
     <link href="https://wuyue0924.github.io/gh-pages/feed.xml" rel="self" />
     <link href="https://wuyue0924.github.io/gh-pages" />
-    <updated>2025-07-06T13:01:19+08:00</updated>
+    <updated>2025-07-06T19:49:20+08:00</updated>
     <author>
         <name>CppKIng</name>
     </author>
@@ -22,13 +22,74 @@
             <summary>
                 <![CDATA[
                         <img src="https://wuyue0924.github.io/gh-pages/media/posts/3/statue-of-liberty-6307197.jpg" alt="请问" />
-                    啊实打实阿斯顿撒大沙发
+                    啊实打实阿斯顿撒大沙发 bool EvpAES::encrypt(const QByteArray &amp;in, QByteArray &amp;out, const QByteArray &amp;key, const QByteArray &amp;ivec, const EVP_CIPHER *ciper, bool enc) { if (enc) { //&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                     <p><img src="https://wuyue0924.github.io/gh-pages/media/posts/3/statue-of-liberty-6307197.jpg" class="type:primaryImage" alt="请问" /></p>
                 <p>啊实打实阿斯顿撒大沙发</p>
+<pre class="language-c line-numbers"><code>bool EvpAES::encrypt(const QByteArray &amp;in, QByteArray &amp;out, const QByteArray &amp;key, const QByteArray &amp;ivec, const EVP_CIPHER *ciper, bool enc)
+{
+    if (enc)
+    {
+        // 指定加密算法及key和iv
+        int ret = EVP_EncryptInit_ex(ctx, ciper, NULL, (const unsigned char*)key.data(), (const unsigned char*)ivec.data());
+        if(ret != 1)
+        {
+            return false;
+        }
+
+        // 进行加密操作
+        int mlen = 0;
+        out.resize(in.size() + AES_BLOCK_SIZE);
+        ret = EVP_EncryptUpdate(ctx, (unsigned char*)out.data(), &amp;mlen, (const unsigned char*)in.data(), in.size());
+        if(ret != 1)
+        {
+            return false;
+        }
+
+        // 结束加密操作
+        int flen = 0;
+        ret = EVP_EncryptFinal_ex(ctx, (unsigned char *)out.data() + mlen, &amp;flen);
+        if(ret != 1)
+        {
+            return false;
+        }
+        out.resize(mlen + flen);
+        return true;
+    }
+    else
+    {
+        // 指定解密算法及key和iv
+        int ret = EVP_DecryptInit_ex(ctx, ciper, NULL, (const unsigned char*)key.data(), (const unsigned char*)ivec.data());
+        if(ret != 1)
+        {
+            return false;
+        }
+
+        // 进行解密操作
+        int mlen = 0;
+        out.resize(in.size());
+        ret = EVP_DecryptUpdate(ctx, (unsigned char*)out.data(), &amp;mlen, (const unsigned char*)in.data(), in.size());
+        if(ret != 1)
+        {
+            return false;
+        }
+
+        // 结束解密操作
+        int flen = 0;
+        ret = EVP_DecryptFinal_ex(ctx, (unsigned char *)out.data() + mlen, &amp;flen);
+        if(ret != 1)
+        {
+            return false;
+        }
+        out.resize(mlen + flen);
+        return true;
+    }
+}
+</code></pre>
+<p><br><br></p>
             ]]>
         </content>
     </entry>
