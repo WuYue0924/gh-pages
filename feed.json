@@ -10,6 +10,21 @@
     },
     "items": [
         {
+            "id": "https://wuyue0924.github.io/gh-pages/ce-shi-zhu-ti.html",
+            "url": "https://wuyue0924.github.io/gh-pages/ce-shi-zhu-ti.html",
+            "title": "测试主题",
+            "summary": "啊实打实阿斯顿撒大沙发",
+            "content_html": "<p>啊实打实阿斯顿撒大沙发</p>",
+            "image": "https://wuyue0924.github.io/gh-pages/media/posts/3/statue-of-liberty-6307197.jpg",
+            "author": {
+                "name": "CppKIng"
+            },
+            "tags": [
+            ],
+            "date_published": "2025-07-06T13:00:57+08:00",
+            "date_modified": "2025-07-06T13:01:19+08:00"
+        },
+        {
             "id": "https://wuyue0924.github.io/gh-pages/ce-shi-wang-zhan-fa-bu.html",
             "url": "https://wuyue0924.github.io/gh-pages/ce-shi-wang-zhan-fa-bu.html",
             "title": "测试网站发布",

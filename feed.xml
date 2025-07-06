@@ -3,12 +3,35 @@
     <title>CppKing-Blog</title>
     <link href="https://wuyue0924.github.io/gh-pages/feed.xml" rel="self" />
     <link href="https://wuyue0924.github.io/gh-pages" />
-    <updated>2025-07-06T12:48:22+08:00</updated>
+    <updated>2025-07-06T13:01:19+08:00</updated>
     <author>
         <name>CppKIng</name>
     </author>
     <id>https://wuyue0924.github.io/gh-pages</id>
 
+    <entry>
+        <title>测试主题</title>
+        <author>
+            <name>CppKIng</name>
+        </author>
+        <link href="https://wuyue0924.github.io/gh-pages/ce-shi-zhu-ti.html"/>
+        <id>https://wuyue0924.github.io/gh-pages/ce-shi-zhu-ti.html</id>
+        <media:content url="https://wuyue0924.github.io/gh-pages/media/posts/3/statue-of-liberty-6307197.jpg" medium="image" />
+
+        <updated>2025-07-06T13:00:57+08:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://wuyue0924.github.io/gh-pages/media/posts/3/statue-of-liberty-6307197.jpg" alt="请问" />
+                    啊实打实阿斯顿撒大沙发
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://wuyue0924.github.io/gh-pages/media/posts/3/statue-of-liberty-6307197.jpg" class="type:primaryImage" alt="请问" /></p>
+                <p>啊实打实阿斯顿撒大沙发</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>测试网站发布</title>
         <author>
